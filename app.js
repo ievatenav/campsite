@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-const request = require('request');
 const mongoose = require("mongoose");
 const Campsite = require("./models/campsite");
 const Comment = require("./models/comment");
