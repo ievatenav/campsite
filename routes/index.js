@@ -49,11 +49,5 @@ router.get("/logout", function(req, res) {
    res.redirect("/campsites");
 });
 
-// Error Route
-router.get("*", function(req, res){
-    req.flash("error", "Sorry, page you were looking for was not found!");
-    res.redirect("back");
-});
-
 
 module.exports = router;

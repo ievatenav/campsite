@@ -19,8 +19,7 @@ const indexRoutes = require("./routes/index");
 
 
 // APP CONFIG
-// mongoose.connect('mongodb://localhost:27017/camp_site', { useNewUrlParser: true });
-mongoose.connect('mongodb://admin:nimda1@ds213645.mlab.com:13645/campsite', { useNewUrlParser: true });
+mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
 mongoose.set('useFindAndModify', false);
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
