@@ -1,0 +1,11 @@
+.container {
+    margin-top: 20px;
+}
+
+.floatRight {
+    float: right;
+}
+
+.deleteForm {
+    display: inline;
+}
