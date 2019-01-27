@@ -18,9 +18,13 @@ const commentRoutes = require("./routes/comments");
 const indexRoutes = require("./routes/index");
 
 
-// APP CONFIG
-mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
+// DB CONFIG
+let url = process.env.DATABASEURL || "mongodb://localhost:27017/camp_site";
+mongoose.connect(url, { useNewUrlParser: true });
 mongoose.set('useFindAndModify', false);
+
+
+// APP CONFIG
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
