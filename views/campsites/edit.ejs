@@ -1,27 +1,25 @@
 <% include ../partials/header %>
 
-<div class="container" style="margin-top: 25px;">
+<div class="form">
     <h1 style="text-align: center;">Edit <%= campsite.name %></h1>
-    <div style="width: 30%; margin: 30px auto;">
-        <form action="/campsites/<%= campsite._id %>?_method=PUT"  method="POST">
-            <div class="form-group">
-                <input class="form-control" type="text" name="campsite[name]" value="<%= campsite.name %>">
-            </div>
-            <div class="form-group">
-                <input class="form-control" type="number" name="campsite[price]" value="<%= campsite.price %>" step="0.01">
-            </div>
-            <div class="form-group">
-                <input class="form-control" type="text" name="campsite[img]" value="<%= campsite.img %>">
-            </div>
-            <div class="form-group">
-                <input class="form-control" type="text" name="campsite[description]" value="<%= campsite.description %>">
-            </div>
-            <div class="form-group">
-               <button class="btn btn-lg btn-primary btn-block">Submit</button>
-            </div>
-        </form>
-        <a href="/campsites" class="btn btn-secondary btn-sm">Go Back</a>
-    </div>
+    <form action="/campsites/<%= campsite._id %>?_method=PUT"  method="POST">
+        <div class="form-group">
+            <input class="form-control" type="text" name="campsite[name]" value="<%= campsite.name %>">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="number" name="campsite[price]" value="<%= campsite.price %>" step="0.01">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="text" name="campsite[img]" value="<%= campsite.img %>">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="text" name="campsite[description]" value="<%= campsite.description %>">
+        </div>
+        <div class="form-group">
+           <button class="btn btn-lg btn-primary btn-block">Submit</button>
+        </div>
+    </form>
+    <a href="/campsites" class="btn btn-secondary btn-sm">Go Back</a>
 </div>
 
 <% include ../partials/footer %>

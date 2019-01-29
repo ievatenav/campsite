@@ -22,6 +22,7 @@ const indexRoutes = require("./routes/index");
 let url = process.env.DATABASEURL || "mongodb://localhost:27017/camp_site";
 mongoose.connect(url, { useNewUrlParser: true });
 mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
 
 
 // APP CONFIG
@@ -30,6 +31,7 @@ app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
 app.use(flash());
+app.locals.moment = require('moment');
 // seedDB(); // seed the database
 
 

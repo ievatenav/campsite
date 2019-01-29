@@ -9,7 +9,7 @@ const middleware = require("../middleware");
 router.get("/new", middleware.isLoggedIn, function(req, res) {
     Campsite.findById(req.params.id, function(err, campsite){
         if(err){
-            req.flash("error", "Comment could not be found!");
+            req.flash("error", "Comments could not be found!");
             res.redirect("back");
             console.log(err);
         } else {

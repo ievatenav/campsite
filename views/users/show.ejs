@@ -1,0 +1,29 @@
+<% include ../partials/header %>
+
+<div class="row">
+    <div class="col-md-4">
+        <figure>
+            <h1><%= user.firstName %> <%= user.lastName %></h1>
+            <img class="indexImg figure-img img-fluid rounded" src="<%= user.avatar %>" alt="user profile image">
+            <figcaption class="figure-caption text-center">
+                 <p>Email: <a href="mailto:<%= user.email %>"><%= user.email %></a></p>
+                 <p>
+                     It is a long established fact that a reader will be distracted by the readable content
+                     of a page when looking at its layout. The point of using Lorem Ipsum is that it has a 
+                     more-or-less normal distribution of letters, as opposed to using 'Content here, content here',
+                     making it look like readable English.
+                 </p>
+             </figcaption>
+        </figure>
+    </div>
+    <div class="col-md-8">
+        <h4>Submitted CampSites:</h4>
+        <ul>
+            <% campsites.forEach(function(campsite){ %>
+               <a href="/campsites/<%= campsite._id %>"><%= campsite.name %></a>
+           <% }); %>
+        </ul>
+    </div>
+</div>
+
+<% include ../partials/footer %>

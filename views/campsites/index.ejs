@@ -1,28 +1,25 @@
 <% include ../partials/header %>
 
-    <div class="container">
-        <header class="jumbotron">
-            <h1>Welcome to Camp Site!</h1>
-            <p>View our hand-picked campsites from all over the world</p>
-            <p>
-                <a href="/campsites/new" class="btn btn-primary btn-lg">Add New Campsite</a>
-            </p>
-        </header>
+<header class="jumbotron">
+    <h1>Welcome to Camp Site!</h1>
+    <p>View our hand-picked campsites from all over the world</p>
+    <p>
+        <a href="/campsites/new" class="btn btn-primary btn-lg">Add New Campsite</a>
+    </p>
+</header>
 
-        <div class="row">
-            <% campsites.forEach(function(camp){ %>
-                <div class="col-md-3 col-sm-6">
-                    <figure>
-                        <img class="indexImg figure-img img-fluid rounded" src="<%= camp.img %>">
-                        <figcaption class="figure-caption text-center">
-                            <p><%= camp.name %></p>
-                            <a href="/campsites/<%= camp._id %>" class="btn btn-dark btn-sm btn-block">More Info</a>
-                        </figcaption>
-                    </figure>
-                </div>
-            <% }) %>
+<div class="row">
+    <% campsites.forEach(function(camp){ %>
+        <div class="col-md-3 col-sm-6">
+            <figure>
+                <img class="indexImg figure-img img-fluid rounded" src="<%= camp.img %>">
+                <figcaption class="figure-caption text-center">
+                    <p><%= camp.name %></p>
+                    <a href="/campsites/<%= camp._id %>" class="btn btn-dark btn-sm btn-block">More Info</a>
+                </figcaption>
+            </figure>
         </div>
-        
-    </div>
+    <% }) %>
+</div>
 
 <% include ../partials/footer %>
